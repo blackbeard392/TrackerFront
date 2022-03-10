@@ -1,0 +1,89 @@
+table {
+    width: 100%;
+
+  }
+
+  
+
+  .mat-column-id{
+    background-color:indigo;
+    width:5%;
+    font-size: 20px;
+    color:white;
+    text-align:left ;
+    margin: 0px;
+  }
+
+  .mat-column-productName{
+    background-color: #4b3987;
+    width:25%;
+    text-align: center;
+    font-size:20px;
+    color:white;
+  }
+
+  .mat-column-quantity{
+    background-color: indigo;
+    width:10%;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+
+  }
+
+  .mat-column-editView{
+    background-color: #4b3987;
+    width:25%;
+    text-align: center;
+    color:white;
+    font-size: 20px;
+  }
+
+
+
+.both_btn button{
+  margin-right:30px;
+  font-size:20px;
+  padding:8px;
+  border-radius:7px;
+  background-color:indigo;
+  color:white;
+  
+}
+
+.both_btn button:hover{
+  background-color:#b29aea;
+}
+
+.add-btn-container{
+  width:100%;
+  background-color:#4b3987; 
+}
+
+.btn-add{
+  color:white;
+  position:relative;
+  left:97%;
+
+}
+
+
+
+.logout-btn-container{
+  width:100%;
+  background-color:#4b3987;
+}
+
+  .logout{
+  font-size:20px;
+  padding:8px;
+  background-color: indigo;
+  color:white;
+  margin-bottom:1%;
+  position:relative;
+  right: 0.1%;
+}
+
+.logout:hover{
+  background-color: #b29aea;
+}

@@ -1,0 +1,50 @@
+<div class = 'logout-btn-container'>
+  <button class = 'logout' (click) = 'logout()'>Logout</button>
+</div>
+
+
+
+   
+<table mat-table [dataSource]="data" class = 'table-tab'>
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let prod"> {{prod.id}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef> Product Name </th>
+        <td mat-cell *matCellDef="let prod"> {{prod.productName}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> Quantity </th>
+        <td mat-cell *matCellDef="let prod"> {{prod.quantity}} </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="editView">
+        <th mat-header-cell  *matHeaderCellDef > View and Edit Products </th>
+        <td mat-cell *matCellDef="let row let i = index">
+          <div class= 'both_btn'>
+            <button class = 'view_btn' mat-button  (click) = 'view(i)'>View</button>
+            <button class='edit_btn' mat-button (click)= 'edit(i)'>Edit</button>
+            <button class='delete_btn' mat-button (click)= 'delete(i)'>Delete</button>
+          </div>
+          
+        </td>
+        </ng-container>
+
+        
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+</table>
+
+<div class = 'add-btn-container'>
+<button mat-icon-button class = 'btn-add'>
+  <mat-icon (click) = 'add_product()'>control_point</mat-icon>
+  </button>
+</div>

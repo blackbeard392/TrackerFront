@@ -1,0 +1,30 @@
+<button class = 'products_btn' (click) = 'back_to_Products()'>Back to Products</button>
+
+
+<form [formGroup]= "productForm" (ngSubmit) = 'add_product()'>
+    <h1>Add New Product</h1>
+    <label class = 'product_label' for="productName">Product Name:</label><br>
+    <input class = 'product' type="text" id="productName" name="product-Name" formControlName= 'productName' ><br>
+    
+    <div class = 'avert-msg-product' *ngIf= "productName.errors?.['minLength'] || productName.errors?.['maxLength'] || productName.errors?.['required']">
+        A product name is required . The product name must be between 3 and 20 characters.
+    </div>
+    <div class = 'avert-msg-product' *ngIf = "productName.errors?.['pattern']">
+        Input characters, not numbers.
+    </div>
+    <label class = 'quantity_label' for="quantity">Quantity:</label><br>
+    <input class = 'quantity' type="number" id="quantity" name="Quantity" formControlName = 'quantity' >
+    <div class = 'avert-msg-quantity' *ngIf= "quantity.errors?.['required']">
+        Input the quantity of products
+    </div>
+    
+    <div *ngIf = '!productForm.valid' >
+        <button class= 'add_btn' type = 'submit' [disabled]= 'true' [ngStyle] = "{'opacity':0.1}">Add Product</button>
+    </div>
+    <div *ngIf = 'productForm.valid' >
+        <button class= 'add_btn' type = 'submit'  [ngStyle] = "{'opacity':1.0}" (click) = 'success_func()'>Add Product</button>
+     </div>
+    <div class = 'success-msg' *ngIf= "added_product">
+        {{success_msg}}
+    </div>
+</form>

@@ -1,0 +1,121 @@
+@media only screen and (max-width:600px){
+    input{
+        width:90%;
+        height:12%;
+        background-color: indigo;
+        margin:20px;
+        position: relative;
+        left:-10px;
+    }
+
+    .submit-btn{
+        font-size:18px;
+        padding:6px;
+        background-color: indigo;
+        color:white;
+        position: absolute;
+        left:3%;
+        top:80%;
+    }
+    
+    .submit-btn:hover{
+        background-color:#b29aea;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    input{
+        width:90%;
+        height:12%;
+        background-color: indigo;
+        margin:20px;
+        position: relative;
+        left:-10px;
+    }
+
+    .submit-btn{
+        font-size:18px;
+        padding:6px;
+        background-color: indigo;
+        color:white;
+        position: absolute;
+        left:3%;
+        top:80%;
+    }
+    
+    .submit-btn:hover{
+        background-color:#b29aea;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    input{
+        width:94%;
+        height:12%;
+        background-color: indigo;
+        margin:20px;
+        position: relative;
+        left:-10px;
+    }
+    .submit-btn{
+        font-size:22px;
+        padding:15px;
+        background-color: indigo;
+        color:white;
+        position: absolute;
+        left:2%;
+        top:70%;
+    }
+    
+    .submit-btn:hover{
+        background-color:#b29aea;
+    }
+}
+
+form{
+    width:40%;
+    height:40%;
+    border:2px solid black;
+    background-color: #4b3987;
+    position: absolute;
+    top:20%;
+    left:30%;
+    border-radius: 10px;
+}
+
+
+
+
+
+label{
+    font-size:18px;
+    color:white;
+}
+
+[formControlName = 'name']{
+    font-size:18px;
+    color:white;
+    
+}
+
+[formControlName = 'password']{
+    font-size:18px;
+    color:white;
+    
+}
+
+label{
+    position: relative;
+    top:15px;
+    left:10px;
+}
+
+h1{
+    position:relative;
+    left:35%;
+    top:3%;
+    color:white;
+}
+
+
+

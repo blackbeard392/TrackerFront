@@ -1,0 +1,20 @@
+<button class = 'products-btn' (click) = 'back_to_Products()'>Back to Products</button>
+
+
+<form [formGroup]=  "productForm" (ngSubmit)=   "updateProduct()">
+    <h1>Edit Products</h1>
+    <label for="productName">Product Name:</label><br>
+    <input type="text" id="productName" name="product-name" formControlName = 'prod_name' [readOnly] = true><br>
+    <label for="quantity">Quantity:</label><br>
+    <input type="number" id="quantity" name="Quantity" formControlName = 'quantity'>
+    
+    <div class = 'warning' *ngIf= "!productForm.valid">
+        Update quantity to enable button
+    </div>    
+        <button class = 'update-btn' type = 'submit' [disabled]= "!productForm.valid || !quantity.dirty" 
+        [ngStyle] = "!productForm.valid || !quantity.dirty ? {'opacity':0.1}:{'opacity':1.0}" (click) = 'updated_product()'>Update Product</button>
+        <div class = 'success-btn' *ngIf= "product_updated">
+        {{updated_product_msg}}
+        
+    </div>
+</form>

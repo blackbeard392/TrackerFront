@@ -1,0 +1,14 @@
+<form [formGroup]= "form" (ngSubmit)= "loginUser()">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="name" name="name" formControlName = 'name' ><br>
+    <label for="password">Last name:</label><br>
+    <input type="text" id="pass" name="password" formControlName = 'password' ><br><br>
+    <div *ngIf = '!form.valid'>
+    <button class = 'submit-btn' type="submit" [disabled] = 'true' [ngStyle] = "{'opacity':0.2}">Submit</button>
+    </div>
+    <div *ngIf = 'form.valid'>
+      <button class = 'submit-btn' type="submit"  [ngStyle] = "{'opacity':1.0}">Submit</button>
+      </div>
+  </form>
+
+  
