@@ -10,42 +10,45 @@ import { Router } from '@angular/router';
 })
 export class EditProductComponent implements OnInit {
 
-  products = this.productServ.getProducts()
-  edit_product_id = this.productServ.edit_product_id
-  product_updated = false
+  products:any = this.productServ.getProducts()
+  edit_product_id:number= this.productServ.edit_product_id
+  product_updated:boolean = false
 
-  updated_product_msg:any
+  updated_product_msg!:string
 
   constructor(private productServ:ProductServiceService, private route:Router) { }
 
   ngOnInit(): void {}
 
-back_to_Products(){
+public back_to_Products():void{
   this.route.navigate(['/products'])
 }
 
 
 
-  updateProduct(){
+  public updateProduct():void{
     
-    const quantity = this.quantity.value
-    const prod_name = this.name.value
-    this.productServ.updateProduct_http(prod_name,quantity)
+    const quantity:any = this.quantity.value
+    const prod_name:any = this.name.value
+    this.productServ.updateProduct_http(prod_name,quantity).subscribe({
+      next:(res)=>console.log(res),
+      error:(er)=>console.log(er)
+    })
     this.product_updated = true
     
   }
 
-  updated_product(){
+  public updated_product():void{
     this.updated_product_msg = 'The product was updated succesfully'
     setTimeout(()=>{
         this.updated_product_msg = ''
     },2500)
   }
 
-  productForm = new FormGroup({
+  public productForm = new FormGroup({
     prod_name: new FormControl(this.products[this.edit_product_id].productName),
     quantity:new FormControl(this.products[this.edit_product_id].quantity,[Validators.minLength(1),Validators.required])
   })
-  get quantity() { return this.productForm.get('quantity') as FormControl }
-  get name(){return this.productForm.get('prod_name')as FormControl}
+  public get quantity():FormControl { return this.productForm.get('quantity') as FormControl }
+  public get name():FormControl{return this.productForm.get('prod_name')as FormControl}
 }

@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class AddProductComponent implements OnInit{
 
-  added_product = false
-  success_msg:any
+  added_product:boolean = false
+  success_msg!:string
   
 
   constructor(private productServ:ProductServiceService, private route:Router) { }
@@ -19,35 +19,38 @@ export class AddProductComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  back_to_Products(){
+  public back_to_Products():void{
     this.route.navigate(['/products'])
   }
 
-  add_product(){
-    const product_name = this.productName.value
-    const quantity = this.quantity.value
-    this.productServ.add_product_http(product_name,quantity)
+ public add_product():void{
+    const product_name:string = this.productName.value
+    const quantity:number = this.quantity.value
+    this.productServ.add_product_http(product_name,quantity).subscribe({
+      next:(res)=>console.log(res),
+      error:(er)=>console.log(er)
+    })
     this.added_product = true
     this.productForm.reset()
     
 }
 
-success_func(){
+public success_func():void{
   this.success_msg = 'The product was added to the list of products'
   setTimeout(()=>{
     this.success_msg = ''
   },2500)
 }
 
-  productForm = new FormGroup({
+ public productForm = new FormGroup({
     productName: new FormControl('',[Validators.minLength(2),Validators.maxLength(20),Validators.required,Validators.pattern('[a-zA-Z ]*')]),
     quantity:new FormControl('',[Validators.required])
   })
   
-  get productName(){
+  public get productName():FormControl{
     return this.productForm.get('productName') as FormControl 
   } 
-  get quantity(){
+  public get quantity():FormControl{
     return this.productForm.get('quantity') as FormControl
   } 
 

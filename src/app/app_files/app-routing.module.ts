@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthService } from './auth.service';
-import { LoginComponent } from './login/login.component';
-import { AddProductComponent } from './products/add-product/add-product.component';
-import { EditProductComponent } from './products/edit-product/edit-product.component';
-import { ProductsComponent } from './products/products.component';
-import { ViewProductComponent } from './products/view-product/view-product.component';
+import { AuthService } from '../auth.service';
+import { LoginComponent } from '../login/login.component';
+import { AddProductComponent } from '../products/add-product/add-product.component';
+import { EditProductComponent } from '../products/edit-product/edit-product.component';
+import { ProductsComponent } from '../products/products.component';
+import { ViewProductComponent } from '../products/view-product/view-product.component';
 
 
 const routes: Routes = [

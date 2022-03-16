@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ViewProductComponent implements OnInit {
 
-  back_to_Products(){
+  public back_to_Products():void{
     this.route.navigate(['/products'])
   }
   
-  products = this.productServ.getProducts()
-  view_id = this.productServ.view_id
+  products:any= this.productServ.getProducts()
+  view_id:number= this.productServ.view_id
 
 
   constructor(private productServ:ProductServiceService, private route: Router ) { }

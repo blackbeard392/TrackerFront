@@ -9,9 +9,8 @@ import { CanActivate } from '@angular/router';
 })
 export class AuthService implements CanActivate{
 
-logged_in = true
-user:any
-pass:any
+logged_in:boolean = true
+
 
 
   constructor( private router:Router) { 
@@ -27,13 +26,13 @@ pass:any
 
   
 
-login(){
+public login():void{
   this.logged_in = true
   this.router.navigate(['products'])
   }
 
 
-logout(){
+public logout():void{
   this.logged_in = false
   this.router.navigate(['login'])
 }
